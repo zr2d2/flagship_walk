@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flagship Walk - directions with accessibility in mind</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <div id="wrap">
+    <div id="header">
+      <div id="topbar">
+        <div id="topbar-padding">
+          <div id="topbar-left">
+            <!-- search here -->
+          </div>
+          <div id="topbar-right">
+            "Login, maybe"
+          </div>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+      <h1 class="expand"><a id="cat_tree_expand" style="display:none;" href="#"><span id="label_hide" style="display:none;">Hide</span><span id="label_show">Show</span> Layers</a></h1>
+      <div id="cat_tree"> 
+        <div id="cat_tree_inset"> 
+          <div id="cat_tree-padding"> 
+            <ul class="tree_root">
+              <li class="root_link"><a href="/">Home</a></li>
+              <ul>
+                <li><a href="/x">x</a></li>
+              </ul>
+            </ul>
+          </div> 
+        </div> 
+      </div>
+    </div>
+    
+    <div id="wrap-padding">
+      <%= yield %>
+    </div>
+  </div>
+  <div id="footer">Powered by <a href="http://github.com/zr2d2/flagship_walk">Flagship Walk</a>.&nbsp;&nbsp;&nbsp;2018 <a href="http://github.com/zr2d2">Zach Rowe</a>.</div>
+</body>
+</html>

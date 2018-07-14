@@ -22,14 +22,22 @@ helpers do
   end
 end
 
+get '/' do
+  erb :index
+end
+
 get '/directions' do
 
   key = ENV['GMAPS_KEY']
 
+  from = params['from']
+
+  to = params['to']
+
   params = {
     query: {
-      origin: '800 Lincoln Cir NE, Washington, DC 20002',
-      destination: '200 Florida Ave NE, Washington, DC 20002',
+      origin: from,
+      destination: to,
       mode: 'walking',
       alternatives: 'true',
       key: key,
@@ -70,5 +78,7 @@ get '/directions' do
 
   best_route_text = json[:routes][best_route_id][:summary]
 
-  return "You're best to use #{best_route_text}"
+  @text = "You're best to use #{best_route_text}"
+
+  erb :directions
 end
